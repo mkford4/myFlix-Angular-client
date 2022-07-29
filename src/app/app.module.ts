@@ -29,6 +29,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { DirectorComponent } from './director/director.component';
 import { GenreComponent } from './genre/genre.component';
 import { MovieSynopsisComponent } from './movie-synopsis/movie-synopsis.component';
+import { MatToolbarModule } from '@angular/material/toolbar';
 
 //routes definition
 const appRoutes: Routes = [
@@ -64,6 +65,7 @@ const appRoutes: Routes = [
     FormsModule,
     MatIconModule,
     RouterModule.forRoot(appRoutes),
+    MatToolbarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

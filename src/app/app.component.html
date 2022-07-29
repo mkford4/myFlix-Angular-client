@@ -1,14 +1,15 @@
-<div class="main-page">
-  <h1>
-    Welcome to Bechflix!
-  </h1>
-  <button mat-raised-button (click)="openUserRegistrationDialog()" style="margin-right: 10px;" color="primary">
-    Sign Up
+<mat-toolbar>
+  <button mat-button class="nav-brand" style="font-size: large;" (click)="goMovies()"
+    aria-label="Button to see all movies">
+    Bechflix
   </button>
-  <button mat-raised-button (click)="openUserLoginDialog()" color="primary">
-    Login
+  <span class="nav-spacer"></span>
+  <button mat-button style="font-size: medium;" (click)="goProfile()" aria-label="Button to view your profile">
+    Profile
   </button>
-  <button mat-raised-button color="primary" (click)="openMoviesDialog()">
-    All Movies
+  <button mat-button color="accent" style="font-size: medium;" (click)="logOut()" aria-label="Button to logout of app">
+    Logout
   </button>
-</div>
+</mat-toolbar>
+
+<router-outlet></router-outlet>

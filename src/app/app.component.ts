@@ -1,8 +1,11 @@
 import { Component } from '@angular/core';
-import { UserRegistrationFormComponent } from './user-registration-form/user-registration-form.component';
-import { MatDialog } from '@angular/material/dialog';
+import { MatToolbar } from '@angular/material/toolbar';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { Router } from '@angular/router';
+import { FetchApiDataService } from './fetch-api-data.service';
+
 import { MovieCardComponent } from './movie-card/movie-card.component';
-import { UserLoginFormComponent } from './user-login-form/user-login-form.component';
 
 @Component({
   selector: 'app-root',
@@ -12,25 +15,36 @@ import { UserLoginFormComponent } from './user-login-form/user-login-form.compon
 export class AppComponent {
   title = 'myFLix-Angular-client';
 
-  constructor(public dialog: MatDialog) { }
-  //this function will open the dialog when the sign up button is clicked
-  openUserRegistrationDialog(): void {
-    this.dialog.open(UserRegistrationFormComponent, {
-      //Assigning the dialog a width
-      width: '280px'
-    });
+  constructor(
+    public fetchApiData: FetchApiDataService,
+    public router: Router,
+    public snackBar: MatSnackBar,
+    public dialog: MatDialogModule,
+  ) { }
+
+  goMovies(): void {
+    this.router.navigate(['movies']);
   }
 
-  openUserLoginDialog(): void {
-    this.dialog.open(UserLoginFormComponent, {
-      width: '280px'
-    });
+  goProfile(): void {
+    this.router.navigate(['profile']);
   }
 
-  openMoviesDialog(): void {
-    this.dialog.open(MovieCardComponent, {
-      width: '500px'
+  logOut(): void {
+    localStorage.clear();
+    this.snackBar.open('You have been successfully logged out', 'OK', {
+      duration: 2000,
     });
-  }
+    this.router.navigate(['welcome']);
 
+    /*
+      openMoviesDialog(): void {
+        this.dialog.open(MovieCardComponent, {
+          width: '500px'
+        });
+      }
+    
+      */
+
+  }
 }
