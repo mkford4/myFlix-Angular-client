@@ -1,0 +1,64 @@
+<div>
+  <mat-card class="user-profile">
+    <mat-card-header>
+      <mat-card-title>
+        My Profile
+      </mat-card-title>
+    </mat-card-header>
+    <div style="margin-left: 16px;">
+      <mat-card-content>
+        <p><b>Username:</b> {{user.Username}}</p>
+        <p><b>Email:</b> {{user.Email}}</p>
+        <p><b>Birthday:</b> {{user.Birthday | date}}</p>
+      </mat-card-content>
+
+      <mat-card-content>
+        <form>
+          <mat-form-field>
+            <input matInput [(ngModel)]="userData.Username" placeholder="Username" type="text" name="Username" />
+          </mat-form-field>
+          <mat-form-field>
+            <input matInput [(ngModel)]="userData.Password" placeholder="Password" type="password" name="Password" />
+          </mat-form-field>
+          <mat-form-field>
+            <input matInput [(ngModel)]="userData.Email" placeholder="Email" type="email" name="Email" />
+          </mat-form-field>
+          <mat-form-field>
+            <input matInput [(ngModel)]="userData.Birthday" placeholder="Birthday" type="date" name="Birthday" />
+          </mat-form-field>
+        </form>
+
+        <mat-card-actions>
+          <button mat-raised-button (click)="editUser()" color="primary">
+            Update Profile
+          </button>
+        </mat-card-actions>
+      </mat-card-content>
+
+      <mat-card-actions>
+        <button mat-raised-button (click)="deleteProfile()" color="warn">
+          Delete Profile
+        </button>
+      </mat-card-actions>
+
+      <!-- favorite movies list -->
+      <div>
+        <h2>My Favorite Movies</h2>
+        <mat-card *ngFor="let movie of movies; let i = index" class="favorite-movie">
+          <mat-card-header>
+            <mat-card-title>{{movie.Title}}</mat-card-title>
+            <mat-card-subtitle color="primary" (click)="openDirectorDialog(
+          movie.Director.Name, movie.Director.Bio, movie.Director.Birth, movie.Director.Death)">
+              Directed by: {{movie.Director.Name}}
+            </mat-card-subtitle>
+          </mat-card-header>
+          <button mat-button-toggle (click)="removeFavoriteMovie(movie._id)">
+            <mat-icon>favorite</mat-icon>
+          </button>
+        </mat-card>
+      </div>
+
+    </div>
+
+  </mat-card>
+</div>
