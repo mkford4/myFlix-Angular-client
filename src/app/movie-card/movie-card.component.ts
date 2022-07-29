@@ -5,6 +5,8 @@ import { DirectorComponent } from '../director/director.component';
 import { FetchApiDataService } from '../fetch-api-data.service';
 import { GenreComponent } from '../genre/genre.component';
 import { MovieSynopsisComponent } from '../movie-synopsis/movie-synopsis.component';
+import { MatToolbar } from '@angular/material/toolbar';
+import { NavigationToolbarComponent } from '../navigation-toolbar/navigation-toolbar.component';
 
 @Component({
   selector: 'app-movie-card',

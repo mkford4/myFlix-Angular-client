@@ -6,7 +6,9 @@ import { FetchApiDataService } from '../fetch-api-data.service';
 import { DirectorComponent } from '../director/director.component';
 import { GenreComponent } from '../genre/genre.component';
 import { MovieSynopsisComponent } from '../movie-synopsis/movie-synopsis.component';
-
+//navigation toolbar
+import { MatToolbar } from '@angular/material/toolbar';
+import { NavigationToolbarComponent } from '../navigation-toolbar/navigation-toolbar.component';
 
 @Component({
   selector: 'app-user-profile',

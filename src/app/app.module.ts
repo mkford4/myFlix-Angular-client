@@ -30,6 +30,7 @@ import { DirectorComponent } from './director/director.component';
 import { GenreComponent } from './genre/genre.component';
 import { MovieSynopsisComponent } from './movie-synopsis/movie-synopsis.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { NavigationToolbarComponent } from './navigation-toolbar/navigation-toolbar.component';
 
 //routes definition
 const appRoutes: Routes = [
@@ -50,6 +51,7 @@ const appRoutes: Routes = [
     DirectorComponent,
     GenreComponent,
     MovieSynopsisComponent,
+    NavigationToolbarComponent,
   ],
   imports: [
     BrowserModule,

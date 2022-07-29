@@ -1,9 +1,4 @@
 import { Component } from '@angular/core';
-import { MatToolbar } from '@angular/material/toolbar';
-import { MatDialogModule } from '@angular/material/dialog';
-import { MatSnackBar } from '@angular/material/snack-bar';
-import { Router } from '@angular/router';
-import { FetchApiDataService } from './fetch-api-data.service';
 
 import { MovieCardComponent } from './movie-card/movie-card.component';
 
@@ -15,36 +10,16 @@ import { MovieCardComponent } from './movie-card/movie-card.component';
 export class AppComponent {
   title = 'myFLix-Angular-client';
 
-  constructor(
-    public fetchApiData: FetchApiDataService,
-    public router: Router,
-    public snackBar: MatSnackBar,
-    public dialog: MatDialogModule,
-  ) { }
+  constructor() { }
 
-  goMovies(): void {
-    this.router.navigate(['movies']);
-  }
 
-  goProfile(): void {
-    this.router.navigate(['profile']);
-  }
+  /*
+    openMoviesDialog(): void {
+      this.dialog.open(MovieCardComponent, {
+        width: '500px'
+      });
+    }
+  
+    */
 
-  logOut(): void {
-    localStorage.clear();
-    this.snackBar.open('You have been successfully logged out', 'OK', {
-      duration: 2000,
-    });
-    this.router.navigate(['welcome']);
-
-    /*
-      openMoviesDialog(): void {
-        this.dialog.open(MovieCardComponent, {
-          width: '500px'
-        });
-      }
-    
-      */
-
-  }
 }
