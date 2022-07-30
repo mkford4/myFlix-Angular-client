@@ -246,6 +246,6 @@ export class FetchApiDataService {
         `Error body is: ${error.error}`);
     }
     return throwError(
-      'Something bad happened deleting your profile; please try again later,');
+      'Something bad happened; please try again later,');
   }
 }
