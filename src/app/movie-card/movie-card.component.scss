@@ -3,15 +3,64 @@ $color1: #cfe4bb;
 $color2: #79568f;
 $color3: #e4dde8;
 $pink: #c15f8e;
+$dark: #7e9569;
+$darkpurple: #543c64;
+
+.movie-view {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 50px 0;
+  background-color: $color;
+}
 
 .movie-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  box-shadow: 10px 5px 5px $dark;
   background-color: $color1;
+  max-width: 320px;
+  width: 320px;
+  margin: 5px;
+
+}
+
+.movie-title {
+  display: flex;
+  max-width: 210px;
+  justify-content: center;
+  text-align: center;
+  line-height: normal;
+}
+
+.director {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  color: $darkpurple;
 }
 
 .details-btn {
-  color: $color2;
+  color: $darkpurple;
+  padding: 5px;
+  margin: 0;
+  line-height: 0;
+  max-height: 20px;
+}
+
+img {
+  width: 280px;
+  height: 350px;
+  object-fit: contain;
 }
 
 .fav-btn {
   color: $pink;
+  position: absolute;
+  right: 12px;
+  top: 12px;
 }

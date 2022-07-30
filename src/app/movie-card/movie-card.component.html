@@ -1,10 +1,10 @@
 <app-navigation-toolbar class="toolbar"></app-navigation-toolbar>
-<div style="display: flex;">
+<div class="movie-view" style="display: flex;">
   <mat-card class="movie-card" *ngFor="let movie of movies; let i=index;" style="flex: 1 1 auto;">
 
     <mat-card-header>
-      <mat-card-title>{{movie.Title}}</mat-card-title>
-      <mat-card-subtitle>Directed by:
+      <mat-card-title class="movie-title"><b>{{movie.Title}}</b></mat-card-title>
+      <mat-card-subtitle class="director">Directed by:
         <button mat-button
           (click)="openDirectorDialog(movie.Director.Name, movie.Director.Bio, movie.Director.Birth, movie.Director.Death)"
           class="details-btn">

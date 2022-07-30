@@ -3,12 +3,45 @@ $color1: #cfe4bb;
 $color2: #79568f;
 $color3: #e4dde8;
 $pink: #c15f8e;
+$dark: #7e9569;
+$darkpurple: #543c64;
+
+.welcome-page {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+}
+
+.welcome-card {
+  display: flex;
+  padding: 30px;
+  width: 300px;
+  flex-direction: column;
+  box-shadow: 10px 5px 5px $dark;
+  background-color: white;
+}
+
+.welcome-header {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}
 
 .reg-btn {
-  background-color: $color3;
+  background-color: $dark;
+  color: white;
 }
 
 .login-btn {
   background-color: $color2;
   color: white;
+}
+
+.mat-card>.mat-card-actions:last-child {
+  margin-bottom: 10px;
+  padding-bottom: 0;
+  display: flex;
+  justify-content: center;
 }

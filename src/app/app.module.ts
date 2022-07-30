@@ -31,6 +31,7 @@ import { GenreComponent } from './genre/genre.component';
 import { MovieSynopsisComponent } from './movie-synopsis/movie-synopsis.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { NavigationToolbarComponent } from './navigation-toolbar/navigation-toolbar.component';
+import { MatDividerModule } from '@angular/material/divider';
 
 //routes definition
 const appRoutes: Routes = [
@@ -67,7 +68,8 @@ const appRoutes: Routes = [
     FormsModule,
     MatIconModule,
     RouterModule.forRoot(appRoutes),
-    MatToolbarModule
+    MatToolbarModule,
+    MatDividerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

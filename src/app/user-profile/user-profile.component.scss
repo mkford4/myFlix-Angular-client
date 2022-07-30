@@ -3,9 +3,35 @@ $color1: #cfe4bb;
 $color2: #79568f;
 $color3: #e4dde8;
 $pink: #c15f8e;
+$dark: #7e9569;
+$darkpurple: #543c64;
 
 .user-profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px 40px;
+  background-color: $color;
+}
+
+.user-card {
+  margin-top: 50px;
+  display: flex;
+  padding: 30px;
+  width: 400px;
+  flex-direction: column;
+  box-shadow: 10px 5px 5px $darkpurple;
   background-color: $color3;
+}
+
+.my-profile {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.user-info {
+  color: $darkpurple;
 }
 
 .update-btn {
@@ -13,8 +39,81 @@ $pink: #c15f8e;
   color: white;
 }
 
-.unfavorite-btn {
+.delete-btn {
+  //float: right;
+}
+
+.divider {
+  background-color: $dark;
+}
+
+.fav-movies-section {
+  color: $darkpurple;
+  margin-top: 25px;
+}
+
+.favorites-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.favorite-movies {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
   background-color: white;
+  box-shadow: 10px 5px 5px $darkpurple;
+  max-width: 280px;
+  width: 280px;
+  margin: 15px;
+  padding: 20px 3px;
+}
+
+.fav-movie-header {
+  display: flex;
+  align-items: center;
+  height: 80px;
+  color: $darkpurple;
+}
+
+.title {
+  display: flex;
+  max-width: 210px;
+  justify-content: center;
+  text-align: center;
+  line-height: normal;
+  color: $darkpurple;
+}
+
+.director {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  color: $darkpurple;
+}
+
+.details-btn {
+  padding: 5px;
+  margin: 0;
+  line-height: 0;
+  max-height: 20px;
+}
+
+img {
+  border-radius: 5px;
+  height: 350px;
+  object-fit: contain;
+  margin-bottom: 10px;
+}
+
+.unfavorite-btn {
+  background-color: grey;
 }
 
 .fav-message {

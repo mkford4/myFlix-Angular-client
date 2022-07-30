@@ -3,9 +3,36 @@ $color1: #cfe4bb;
 $color2: #79568f;
 $color3: #e4dde8;
 $pink: #c15f8e;
+$dark: #7e9569;
+$darkpurple: #543c64;
 
 .login-form {
   background-color: $color3;
+}
+
+.login {
+  display: flex;
+  justify-content: center;
+  color: $darkpurple;
+}
+
+.login-field {
+  color: $darkpurple;
+}
+
+/*changes input labels in form */
+::ng-deep.mat-focused .mat-form-field-label {
+  color: $darkpurple  !important;
+}
+
+/*changes input field underline */
+::ng-deep.mat-form-field-underline {
+  background-color: $darkpurple  !important;
+}
+
+/*changes input field underline when focused */
+::ng-deep.mat-form-field-ripple {
+  background-color: $darkpurple  !important;
 }
 
 .login-btn {

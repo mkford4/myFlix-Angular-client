@@ -9,6 +9,7 @@ import { MovieSynopsisComponent } from '../movie-synopsis/movie-synopsis.compone
 //navigation toolbar
 import { MatToolbar } from '@angular/material/toolbar';
 import { NavigationToolbarComponent } from '../navigation-toolbar/navigation-toolbar.component';
+import { MatDividerModule } from '@angular/material/divider';
 
 @Component({
   selector: 'app-user-profile',
