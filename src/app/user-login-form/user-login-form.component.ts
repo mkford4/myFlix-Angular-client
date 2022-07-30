@@ -26,6 +26,11 @@ export class UserLoginFormComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  /**
+   * sends login form inputs from user to backend with FetchApiDataService
+   * @function userLogin
+   * redirects user with Router to movie card upon successful login
+   */
   loginUser(): void {
     this.fetchApiData.userLogin(this.userData).subscribe((response) => {
       //Logic for a successful user registration goes HERE ---------

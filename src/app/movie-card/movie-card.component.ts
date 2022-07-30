@@ -28,6 +28,12 @@ export class MovieCardComponent {
     this.getFavoriteMovies();
   }
 
+
+  /**
+   * gets movies from API request
+   * @returns an array with all movies objects
+   * @function getAllMovies
+   */
   getMovies(): void {
     this.fetchApiData.getAllMovies().subscribe((resp: any) => {
       this.movies = resp;
@@ -36,6 +42,11 @@ export class MovieCardComponent {
     });
   }
 
+  /**
+   * gets users' favorite movies from API request
+   * @returns an array with movie ids of user's favorite movies
+   * @function getFavoriteMovies
+   */
   getFavoriteMovies(): void {
     this.fetchApiData.getFavoriteMovies().subscribe((resp: any) => {
       this.favoriteMovies = resp;
@@ -44,11 +55,20 @@ export class MovieCardComponent {
     });
   }
 
-  //checks if movie is already in user's favorites list
+  /**
+   * checks if movie is already in user's favorites list
+   * @param _id 
+   * @returns true: if movie is in user's favorites, else false
+   */
   isFav(_id: string): boolean {
     return this.favoriteMovies.includes(_id)
   }
 
+  /**
+   * adds a movie to user's favorite movies list/array with API request
+   * @param _id 
+   * @function addFavoriteMovie
+   */
   addFavoriteMovie(_id: string): void {
     console.log(_id);
     this.fetchApiData.addFavoriteMovie(_id).subscribe((response) => {
@@ -57,6 +77,11 @@ export class MovieCardComponent {
     })
   }
 
+  /**
+   * removes a movie from the user's favorites list with API request
+   * @param _id 
+   * @function removeFavoriteMovie
+   */
   removeFavoriteMovie(_id: string): void {
     console.log(_id);
     this.fetchApiData.removeFavoriteMovie(_id).subscribe((response) => {
@@ -65,6 +90,11 @@ export class MovieCardComponent {
     })
   }
 
+  /**
+   * opens the user genre dialog from GenreComponent to show genre details
+   * @param name 
+   * @param description 
+   */
   openGenreDialog(name: string, description: string): void {
     this.dialog.open(GenreComponent, {
       data: {
@@ -75,6 +105,13 @@ export class MovieCardComponent {
     });
   }
 
+  /**
+   * opens the director dialog from DirectorComponent to display director details
+   * @param name 
+   * @param bio 
+   * @param birth 
+   * @param death 
+   */
   openDirectorDialog(
     name: string, bio: string, birth: Date, death: Date
   ): void {
@@ -89,6 +126,11 @@ export class MovieCardComponent {
     });
   }
 
+  /**
+   * opens the synopsis dialog from MovieSynopsisComponent to display movie details
+   * @param title 
+   * @param description 
+   */
   openSynopsisDialog(title: string, description: string): void {
     this.dialog.open(MovieSynopsisComponent, {
       data: {

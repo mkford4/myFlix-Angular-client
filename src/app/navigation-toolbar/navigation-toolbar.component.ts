@@ -22,14 +22,24 @@ export class NavigationToolbarComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  /**
+   * navigates using Router to movies card
+   */
   goMovies(): void {
     this.router.navigate(['movies']);
   }
 
+  /**
+   * navigates using Route to profile card
+   */
   goProfile(): void {
     this.router.navigate(['profile']);
   }
 
+  /**
+   * logs out user, clears local storage to reset token and user
+   * navigates upon logout to welcome card
+   */
   logOut(): void {
     localStorage.clear();
     this.snackBar.open('You have been successfully logged out', 'OK', {
