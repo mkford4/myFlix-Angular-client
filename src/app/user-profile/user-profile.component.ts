@@ -19,6 +19,7 @@ export class UserProfileComponent implements OnInit {
   user: any = {};
   movies: any[] = [];
   favoriteMovies: any[] = [];
+  displayElement: boolean = false;
 
   @Input() userData: any = {};
   constructor(
