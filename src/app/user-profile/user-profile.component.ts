@@ -86,15 +86,7 @@ export class UserProfileComponent implements OnInit {
     })
   }
 
-  getMovies(): void {
-    this.fetchApiData.getAllMovies().subscribe((resp: any) => {
-      this.movies = resp;
-      console.log(this.movies);
-      return this.movies;
-    });
-  }
-
-  getFavoriteMovies(): void {
+  getFavMovies(): void {
     this.fetchApiData.getFavoriteMovies().subscribe((resp: any) => {
       this.favoriteMovies = resp;
       console.log(this.favoriteMovies);
@@ -107,17 +99,12 @@ export class UserProfileComponent implements OnInit {
     return this.favoriteMovies.includes(_id)
   }
 
-  addFavoriteMovie(_id: string): void {
-    console.log(_id);
-    this.fetchApiData.addFavoriteMovie(_id).subscribe((response) => {
-      console.log(response);
-      this.ngOnInit();
-    })
-  }
-
   removeFavoriteMovie(_id: string): void {
     console.log(_id);
     this.fetchApiData.removeFavoriteMovie(_id).subscribe((response) => {
+      this.snackBar.open(`Successfully removed from list`, 'OK', {
+        duration: 2000
+      })
       console.log(response);
       this.ngOnInit();
     })
