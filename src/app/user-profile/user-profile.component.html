@@ -41,13 +41,14 @@
           Delete Profile
         </button>
       </mat-card-actions>
+      <br /><br />
 
       <!-- favorite movies list -->
       <mat-divider class="divider"></mat-divider>
       <div class="fav-movies-section">
         <h2>My Favorite Movies</h2>
 
-        <div *ngIf="displayElement; else message" class="favorites-container">
+        <div class="favorites-container">
 
           <mat-card *ngFor="let movie of favoriteMovies; let i = index" class="favorite-movies">
             <mat-card-header class="fav-movie-header">
@@ -68,25 +69,22 @@
             <mat-card-actions>
               <button mat-button class="details-btn"
                 (click)="openGenreDialog(movie.Genre.Name, movie.Genre.Description)">
-                Genre: {{movie.Genre.Name}}
+                Genre
               </button>
               <button mat-button class="details-btn" (click)="openSynopsisDialog(movie.Title, movie.Description)">
                 Synopsis
               </button>
 
-              <mat-card-actions>
+              <mat-card-actions class="unfavorite">
                 <button mat-button class="unfavorite-btn" (click)="removeFavoriteMovie(movie._id)">
                   Remove
-                  <mat-icon (click)="removeFavoriteMovie(movie._id)">favorite</mat-icon>
                 </button>
               </mat-card-actions>
             </mat-card-actions>
           </mat-card>
         </div>
 
-        <ng-template #message>
-          <h4 class="fav-message">You haven't added any movies to your list!</h4>
-        </ng-template>
+
 
       </div>
     </div>

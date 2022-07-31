@@ -32,6 +32,7 @@ export class UserProfileComponent implements OnInit {
 
   ngOnInit(): void {
     this.getUser();
+    this.getFavMovies();
   }
 
   /**
@@ -87,12 +88,25 @@ export class UserProfileComponent implements OnInit {
     })
   }
 
-  getFavMovies(): void {
-    this.fetchApiData.getFavoriteMovies().subscribe((resp: any) => {
-      this.favoriteMovies = resp;
-      console.log(this.favoriteMovies);
-      return this.favoriteMovies;
+  getMovies(): void {
+    this.fetchApiData.getAllMovies().subscribe((resp: any) => {
+      this.movies = resp;
+      console.log(this.movies);
+      return this.movies;
     });
+  }
+
+  getFavMovies(): void {
+    this.fetchApiData.getAllMovies().subscribe((resp: any) => {
+      this.movies = resp;
+      this.movies.forEach((movie: any) => {
+        if (this.user.FavoriteMovies.includes(movie._id)) {
+          this.favoriteMovies.push(movie);
+          this.displayElement = true;
+        }
+      });
+    });
+    console.log(this.favoriteMovies);
   }
 
   //checks if movie is already in user's favorites list
@@ -107,7 +121,7 @@ export class UserProfileComponent implements OnInit {
         duration: 2000
       })
       console.log(response);
-      this.ngOnInit();
+      //this.ngOnInit();
     })
   }
 
