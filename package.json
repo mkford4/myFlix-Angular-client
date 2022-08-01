@@ -1,7 +1,6 @@
 {
   "name": "my-flix-angular-client",
   "version": "0.0.0",
-  "homepage": "https://mkford4.github.io/myFlix-Angular-client/",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
